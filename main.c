@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <dos.h>
-
+#include <time.h>
 
 char top [2];
 char mid [3]; //arrays to stor the variable charachters for the top middle and bottom line
@@ -16,7 +16,7 @@ for(int x=0;x< numdice;x++)    //prints the line as many times as needed
 printf("   +---------+       "); 
 printf("\n"); //newline must be here to allow prior line to be printed n times on the same line
 for(int x=0;x< numdice;x++)
-printf("  /     %d   /|       ",(spotnum[x] +1));
+printf("  /         /|       ");
 printf("\n");
 for(int x=0;x< numdice;x++)
 printf(" /         / |       ");
