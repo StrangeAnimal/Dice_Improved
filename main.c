@@ -16,7 +16,7 @@ for(int x=0;x< numdice;x++)    //prints the line as many times as needed
 printf("   +---------+       "); 
 printf("\n"); //newline must be here to allow prior line to be printed n times on the same line
 for(int x=0;x< numdice;x++)
-printf("  /         /|       ");
+printf("  /     %d   /|       ",(spotnum[x] +1));
 printf("\n");
 for(int x=0;x< numdice;x++)
 printf(" /         / |       ");
@@ -28,7 +28,6 @@ for(int x=0;x< numdice;x++){
  setdice(spotnum[x]); //set the spot charchters according to the number there should be
 printf("|%c       %c|  |       ",top[0],top[1]); //print the line
 }
-
 printf("\n");
 for(int x=0;x< numdice;x++)
 printf("|         |  |       ");
@@ -166,12 +165,7 @@ int main(int argc, char **argv)
         spotnum[x] = random(); //assign random number
         }
     
-    
-    
-    
-    
-    
-     dice(top,mid,bottom,numdice,spotnum); //print the dice
+    dice(top,mid,bottom,numdice,spotnum); //print the dice
         
 
    
