@@ -66,9 +66,10 @@ for(int x=0;x< numdice;x++){
 
 }
 printf("\n");
-for(int x=0;x<numdice;x++){
+for(int x=0; x<(height-6)/2;x++){
+for(int x=0;x<numdice;x++){   
     
-    for(int x=0; x<(height-6)/2;x++){
+    
       printf("|");
       
       
@@ -79,12 +80,13 @@ for(int x=0;x<numdice;x++){
 
 
 
+
+}
 printf("\n");
 }
 
-}
 
-for(int x=0;x< numdice;x++){
+for(int x=0;x< numdice;x++){ //PROBLEM HERE
  setdice(spotnum[x]);
 printf("|%c",mid[0]);
 for(int x=0;x<width/2;x++){
