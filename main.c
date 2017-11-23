@@ -13,11 +13,11 @@ char bottom [2];
 
 void dice(char top[],char mid[],char bottom[],int numdice,int spotnum[],int height,int width){
 for(int x=0;x< numdice;x++){    //prints the line as many times as needed
- printf("   ");
- printf("+");
- for(int x=0; x<width-2;x++)
- printf("-");
- printf("+");
+   printf("   ");
+   printf("+");
+   for(int x=0; x<width-2;x++)
+      printf("-");
+   printf("+");
 
 
 
@@ -25,10 +25,10 @@ for(int x=0;x< numdice;x++){    //prints the line as many times as needed
 }
 printf("\n"); //newline must be here to allow prior line to be printed n times on the same line
 for(int x=0;x< numdice;x++){
-printf("  /");
-for(int x=0; x<width-2;x++)
- printf(" ");
-printf("/|");
+   printf("  /");
+   for(int x=0; x<width-2;x++)
+      printf(" ");
+   printf("/|");
 
 }
 
@@ -37,52 +37,73 @@ printf("\n");
 
 
 for(int x=0;x< numdice;x++){
-printf(" /");
-for(int x=0; x<width-2;x++)
- printf(" ");
-printf("/ |");
+   printf(" /");
+   for(int x=0; x<width-2;x++)
+     printf(" ");
+   printf("/ |");
 }
 printf("\n");
 for(int x=0;x< numdice;x++){
     
-printf("+");
- for(int x=0; x<width-2;x++)
- printf("-");
- printf("+");
- printf("  |");
+    printf("+");
+    for(int x=0; x<width-2;x++)
+       printf("-");
+    printf("+");
+    printf("  |");
 }
 printf("\n");
 for(int x=0;x< numdice;x++){
- setdice(spotnum[x]); //set the spot charchters according to the number there should be
-printf("|%c",top[0]); //print the line
-for(int x=0; x<width-4;x++)
- printf(" ");
- printf("%c|",top[1]); //print the line
- printf("  |");
+    setdice(spotnum[x]); //set the spot charchters according to the number there should be
+    printf("|%c",top[0]); //print the line
+
+    for(int x=0; x<width-4;x++)
+         printf(" ");
+    printf("%c|",top[1]); //print the line
+    printf("  |");
 
 
 
 
 }
 printf("\n");
-for(int y=0;y<numdice;y++){
-for(int x=0; x<(height-6)/2;x++){
-printf("|");
-for(int x=0; x<width-2;x++)
- printf(" ");
-printf("|");
-printf("  |");
+for(int x=0;x<numdice;x++){
+    
+    for(int x=0; x<(height-6)/2;x++){
+      printf("|");
+      
+      
+    for(int x=0; x<width-2;x++){
+    printf(" ");}
+       printf("|");
+       printf("  |");
 
 
 
-
-}
 printf("\n");
+}
+
 }
 
 for(int x=0;x< numdice;x++){
  setdice(spotnum[x]);
-printf("|%c   %c   %c|  /       ",mid[0],mid[1],mid[2]);
+printf("|%c",mid[0]);
+for(int x=0;x<width/2;x++){
+    
+    printf(" ");
+    }
+printf("%c",mid[1]);
+for(int x=0;x<width/2;x++){
+    
+    printf(" ");
+    }
+printf("%c",mid[2]);
+printf(" /");
+
+
+
+
+
+
 }
 printf("\n");
 for(int x=0;x< numdice;x++)
