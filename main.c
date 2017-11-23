@@ -65,17 +65,19 @@ for(int x=0; x<width-4;x++)
 
 }
 printf("\n");
-
+for(int y=0;y<numdice;y++){
 for(int x=0; x<(height-6)/2;x++){
 printf("|");
 for(int x=0; x<width-2;x++)
  printf(" ");
 printf("|");
 printf("  |");
+
+
+
+
+}
 printf("\n");
-
-
-
 }
 
 for(int x=0;x< numdice;x++){
