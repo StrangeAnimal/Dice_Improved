@@ -12,6 +12,7 @@ char bottom [2];
 
 
 void dice(char top[],char mid[],char bottom[],int numdice,int spotnum[],int height,int width){
+    //printf("%d %d \n",spotnum[0],spotnum[1]);
 for(int x=0;x< numdice;x++){    //prints the line as many times as needed
    printf("   ");
    printf("+");
@@ -89,17 +90,17 @@ printf("\n");
 for(int x=0;x< numdice;x++){ //PROBLEM HERE
  setdice(spotnum[x]);
 printf("|%c",mid[0]);
-for(int x=0;x<width/2;x++){
+for(int x=0;x<(width/2)-2;x++){
     
     printf(" ");
     }
 printf("%c",mid[1]);
-for(int x=0;x<width/2;x++){
+for(int x=0;x<(width/2)-3;x++){
     
     printf(" ");
     }
-printf("%c",mid[2]);
-printf(" /");
+printf("%c|  |",mid[2]);
+//printf("    ");
 
 
 
@@ -108,16 +109,66 @@ printf(" /");
 
 }
 printf("\n");
-for(int x=0;x< numdice;x++)
-printf("|         | /        ");
+for(int x=0; x<((height-6)/2)-1;x++){
+for(int x=0;x<numdice;x++){   
+    
+    
+      printf("|");
+      
+      
+    for(int x=0; x<width-2;x++){
+    printf(" ");}
+       printf("|");
+       printf("  |");
+
+
+
+
+}
 printf("\n");
+}
+for(int x=0;x<numdice;x++){   
+    
+    
+      printf("|");
+      
+      
+    for(int x=0; x<width-2;x++){
+    printf(" ");}
+       printf("|");
+       printf(" / ");
+
+
+
+
+}
+printf("\n");
+
 for(int x=0;x< numdice;x++){
- setdice(spotnum[x]);
-printf("|%c       %c|/         ",bottom[0],bottom[1]);
+    setdice(spotnum[x]); //set the spot charchters according to the number there should be
+    printf("|%c",bottom[0]); //print the line
+
+    for(int x=0; x<width-4;x++)
+         printf(" ");
+    printf("%c|/  ",bottom[1]); //print the line
+    //printf(" ");
+
+
+
+
 }
 printf("\n");
-for(int x=0;x< numdice;x++)
-printf("+---------+          ");   
+for(int x=0;x< numdice;x++){    //prints the line as many times as needed
+   
+   printf("+");
+   for(int x=0; x<width-2;x++)
+      printf("-");
+   printf("+");
+   printf("   ");
+
+
+
+}
 printf("\n");
 }
 
