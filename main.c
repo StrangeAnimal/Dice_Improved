@@ -12,7 +12,7 @@ char bottom [2];
 
 
 void dice(char top[],char mid[],char bottom[],int numdice,int spotnum[],int height,int width){
-    //printf("%d %d \n",spotnum[0],spotnum[1]);
+    printf("%d %d \n",spotnum[0],spotnum[1]);
 for(int x=0;x< numdice;x++){    //prints the line as many times as needed
    printf("   ");
    printf("+");
@@ -279,14 +279,14 @@ int main(int argc, char **argv)
    int height=0;
    int width=0;
    
-   do{
+   //do{
    printf("enter the height\n"); 
    
    scanf("%d",&height);
    printf("enter the width\n"); 
    
    scanf("%d",&width);
-   }while(height <5 || width <4);
+   //}while(height <5 || width <4);
     
     
     
