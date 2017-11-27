@@ -12,24 +12,24 @@ char bottom [2];
 
 
 void dice(char top[],char mid[],char bottom[],int numdice,int spotnum[],int height,int width){
-    printf("%d %d \n",spotnum[0] +1,spotnum[1] +1);
-for(int x=0;x< numdice;x++){    //prints the line as many times as needed
-   printf("   ");
-   printf("+");
+    //printf("%d %d \n",spotnum[0] +1,spotnum[1] +1); used for testing that the dice displayed the right number of spots
+for(int x=0;x< numdice;x++){    //prints the line as many times as the there are dice
+   printf("   "); 
+   printf("+"); //print the top left corner this is allways the same
    for(int x=0; x<width-2;x++)
-      printf("-");
-   printf("+");
+      printf("-");   //print hyphens to make the dice as wide as it needs to be
+   printf("+"); //print the top right corner
 
 
 
 
 }
 printf("\n"); //newline must be here to allow prior line to be printed n times on the same line
-for(int x=0;x< numdice;x++){
-   printf("  /");
+for(int x=0;x< numdice;x++){ //print the second line of the dice as many times as needed
+   printf("  /"); //print the left most part
    for(int x=0; x<width-2;x++)
-      printf(" ");
-   printf("/|");
+      printf(" "); //pad with spaces to make the dice as wide as needed
+   printf("/|"); //print the right hand side
 
 }
 
@@ -37,14 +37,14 @@ printf("\n");
 
 
 
-for(int x=0;x< numdice;x++){
+for(int x=0;x< numdice;x //print the third line as many times as needed
    printf(" /");
    for(int x=0; x<width-2;x++)
-     printf(" ");
+     printf(" "); //do the same as the second line
    printf("/ |");
 }
 printf("\n");
-for(int x=0;x< numdice;x++){
+for(int x=0;x< numdice;x++){ //print the top edge of the dice
     
     printf("+");
     for(int x=0; x<width-2;x++)
@@ -67,14 +67,14 @@ for(int x=0;x< numdice;x++){
 
 }
 printf("\n");
-for(int x=0; x<(height-6)/2;x++){
-for(int x=0;x<numdice;x++){   
+for(int x=0; x<(height-6)/2;x++){ //print blank lines with a | at both ends. this makes the dice as tall as desired 
+for(int x=0;x<numdice;x++){  //prints how many dice are desired 
     
     
       printf("|");
       
       
-    for(int x=0; x<width-2;x++){
+    for(int x=0; x<width-2;x++){ //prints blank lines  like |                  |
     printf(" ");}
        printf("|");
        printf("  |");
@@ -87,15 +87,15 @@ printf("\n");
 }
 
 
-for(int x=0;x< numdice;x++){ //PROBLEM HERE
- setdice(spotnum[x]);
-printf("|%c",mid[0]);
+for(int x=0;x< numdice;x++){ 
+ setdice(spotnum[x]); //re calculate the blank charachters according to the random number
+printf("|%c",mid[0]); //print the left middle dot
 for(int x=0;x<(width/2)-2;x++){
     
     printf(" ");
-    }
-printf("%c",mid[1]);
-for(int x=0;x<(width/2)-3;x++){
+    }    //pad with spaces to make the dice as wide as needed
+printf("%c",mid[1]); //print the middle dot
+for(int x=0;x<(width/2)-3;x++){ //pad with more spaces the same as before
     
     printf(" ");
     }
@@ -109,7 +109,7 @@ printf("%c|  |",mid[2]);
 
 }
 printf("\n");
-for(int x=0; x<((height-6)/2)-1;x++){
+for(int x=0; x<((height-6)/2)-1;x++){ // print padding lines to increase height, this could be put in to another function to save code.
 for(int x=0;x<numdice;x++){   
     
     
@@ -127,7 +127,7 @@ for(int x=0;x<numdice;x++){
 }
 printf("\n");
 }
-for(int x=0;x<numdice;x++){   
+for(int x=0;x<numdice;x++){   //print lines with the back edge added
     
     
       printf("|");
