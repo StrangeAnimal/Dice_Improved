@@ -1,12 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+
 #include <dos.h>
 #include <time.h>
 
 char top [2];
 char mid [3]; //arrays to stor the variable charachters for the top middle and bottom line
 char bottom [2];
+
+
+void padding(int height1,int numdice1,int width1){
+    for(int x=0; x<((height1-6)/2)-1;x++){ // print padding lines to increase height, this could be put in to another function to save code.
+for(int x=0;x<numdice1;x++){   
+    
+    
+      printf("|");
+      
+      
+    for(int x=0; x<width1-2;x++){
+    printf(" ");}
+       printf("|");
+       printf("  |");
+
+
+
+
+}
+printf("\n");
+}
+    
+    
+    
+    
+    }
+
+
 
 
 
@@ -37,7 +65,7 @@ printf("\n");
 
 
 
-for(int x=0;x< numdice;x //print the third line as many times as needed
+for(int x=0;x< numdice;x++){ //print the third line as many times as needed
    printf(" /");
    for(int x=0; x<width-2;x++)
      printf(" "); //do the same as the second line
@@ -67,24 +95,7 @@ for(int x=0;x< numdice;x++){
 
 }
 printf("\n");
-for(int x=0; x<(height-6)/2;x++){ //print blank lines with a | at both ends. this makes the dice as tall as desired 
-for(int x=0;x<numdice;x++){  //prints how many dice are desired 
-    
-    
-      printf("|");
-      
-      
-    for(int x=0; x<width-2;x++){ //prints blank lines  like |                  |
-    printf(" ");}
-       printf("|");
-       printf("  |");
-
-
-
-
-}
-printf("\n");
-}
+padding(height,numdice,width);
 
 
 for(int x=0;x< numdice;x++){ 
@@ -109,24 +120,7 @@ printf("%c|  |",mid[2]);
 
 }
 printf("\n");
-for(int x=0; x<((height-6)/2)-1;x++){ // print padding lines to increase height, this could be put in to another function to save code.
-for(int x=0;x<numdice;x++){   
-    
-    
-      printf("|");
-      
-      
-    for(int x=0; x<width-2;x++){
-    printf(" ");}
-       printf("|");
-       printf("  |");
-
-
-
-
-}
-printf("\n");
-}
+padding(height,numdice,width); //prints padding lines in a function to prevent duplication
 for(int x=0;x<numdice;x++){   //print lines with the back edge added
     
     
@@ -275,7 +269,7 @@ int main(int argc, char **argv)
     scanf("%d",& numdice); //take in the number and assign it to spotnum
     system("cls"); //clear the screen
     
-   int spotnum [numdice]; //array for random numbers of spots for dice
+   int spotnum [numdice]; //array for random numbers of spots for dice (bad code but it works)
    int height=0;
    int width=0;
    
