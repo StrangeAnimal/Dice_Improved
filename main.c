@@ -5,8 +5,11 @@
 #include <time.h>
 
 char top [2];
-char mid [3]; //arrays to stor the variable charachters for the top middle and bottom line
+char mid [3]; //arrays to store the variable charachters for the top middle and bottom line
 char bottom [2];
+
+
+
 
 
 void padding(int height1,int numdice1,int width1){
@@ -156,7 +159,7 @@ for(int x=0;x< numdice;x++){    //prints the line as many times as needed
    
    printf("+");
    for(int x=0; x<width-2;x++)
-      printf("-");
+      printf("-"); //print - to make the cube the desired length
    printf("+");
    printf("   ");
 
