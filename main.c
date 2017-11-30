@@ -285,7 +285,8 @@ int main(int argc, char **argv)
    scanf("%d",&width);
    //}while(height <5 || width <4);
     
-    
+    height = height -1; //adjustments to make the image the specified size
+    width = width -3;
     
     srand(time(NULL));
     while(1){
