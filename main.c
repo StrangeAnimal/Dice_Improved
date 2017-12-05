@@ -12,8 +12,21 @@ char bottom [2];
 
 
 
-void padding(int height1,int numdice1,int width1){
-    for(int x=0; x<((height1-6)/2)-1;x++){ // print padding lines to increase height, this could be put in to another function to save code.
+void padding(int height1,int numdice1,int width1,int run){
+    
+    
+    height1 =height1-1; //adjustment for height
+    int y =0 ;
+    
+    
+    if(run == 0 && height1%2 == 0){ //if there is an even height the number of lines must be reduced for one of the times the function is run
+    
+    y=1;
+    
+    }
+    for(int x=0; x<(((height1-6)/2) -y);x++){
+
+
 for(int x=0;x<numdice1;x++){   
     
     
@@ -22,7 +35,10 @@ for(int x=0;x<numdice1;x++){
       
     for(int x=0; x<width1-2;x++){
     printf(" ");}
+    
+    
        printf("|");
+       
        printf("  |");
 
 
@@ -98,18 +114,28 @@ for(int x=0;x< numdice;x++){
 
 }
 printf("\n");
-padding(height,numdice,width);
+padding(height,numdice,width,0);
+
+int weight;
+int weight1;
+if(width%2 ==0){ weight = 4;
+weight1 =5;
+}
+
+if(width%2 == 1){ weight =5;
+weight1 = 5;
+}
 
 
 for(int x=0;x< numdice;x++){ 
  setdice(spotnum[x]); //re calculate the blank charachters according to the random number
 printf("|%c",mid[0]); //print the left middle dot
-for(int x=0;x<(width/2)-2;x++){
+for(int x=0;x<((width- weight)/2);x++){
     
     printf(" ");
     }    //pad with spaces to make the dice as wide as needed
 printf("%c",mid[1]); //print the middle dot
-for(int x=0;x<(width/2)-3;x++){ //pad with more spaces the same as before
+for(int x=0;x<((width- weight1)/2);x++){ //pad with more spaces the same as before
     
     printf(" ");
     }
@@ -123,7 +149,7 @@ printf("%c|  |",mid[2]);
 
 }
 printf("\n");
-padding(height,numdice,width); //prints padding lines in a function to prevent duplication
+padding(height,numdice,width,1); //prints padding lines in a function to prevent duplication
 for(int x=0;x<numdice;x++){   //print lines with the back edge added
     
     
